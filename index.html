@@ -230,10 +230,7 @@
     <li><a href="#contact">Connect</a></li>
     <li><a href="#schedule">Schedule</a></li>
   </ul>
-  <div class="online-badge" id="navStatus">
-    <div class="online-dot"></div>
-    Available for opportunities
-  </div>
+  <div class="online-badge" id="navStatus" style="display:none;"></div>
   <div class="visit-counter" title="Page visits">
     👁 <span class="vc-num" id="visitCount">—</span> <span>visits</span>
   </div>
@@ -459,7 +456,11 @@
     document.querySelectorAll('.online-dot').forEach(d => d.style.background = color);
 
     const navStatus = document.getElementById('navStatus');
-    if (navStatus) { navStatus.style.color = color; const tn = Array.from(navStatus.childNodes).find(n=>n.nodeType===3); if(tn) tn.textContent = navLabel; }
+    if (navStatus) {
+      navStatus.innerHTML = `<div class="online-dot" style="background:${color};width:8px;height:8px;border-radius:50%;animation:pulse-green 2s ease-in-out infinite;"></div>${navLabel}`;
+      navStatus.style.color = color;
+      navStatus.style.display = 'flex';
+    }
 
     const pill = document.getElementById('statusPill');
     if (pill) { pill.style.color = color; pill.style.borderColor = isOnline ? 'rgba(74,222,128,0.2)' : 'rgba(245,158,11,0.2)'; pill.style.background = isOnline ? 'rgba(74,222,128,0.1)' : 'rgba(245,158,11,0.1)'; }
