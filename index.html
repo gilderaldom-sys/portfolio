@@ -47,6 +47,8 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  padding-bottom: 56px;
+  padding-top: 94px;
 }
 
 /* ───── BACKGROUND GRID ───── */
@@ -140,9 +142,14 @@ p { color: var(--muted); line-height: 1.75; }
    CONTACT BAR
    ═══════════════════════════════════ */
 .contact-bar {
-  background: var(--surface);
+  background: rgba(17,19,24,0.92);
   border-bottom: 1px solid var(--border);
   padding: 10px 0;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 102;
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
 }
 .contact-bar-inner {
   max-width: 1200px; margin: 0 auto; padding: 0 32px;
@@ -162,8 +169,8 @@ p { color: var(--muted); line-height: 1.75; }
    NAVIGATION
    ═══════════════════════════════════ */
 .nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(10,12,15,0.85);
+  position: fixed; top: 41px; left: 0; right: 0; z-index: 101;
+  background: rgba(10,12,15,0.92);
   backdrop-filter: blur(20px) saturate(1.5);
   -webkit-backdrop-filter: blur(20px) saturate(1.5);
   border-bottom: 1px solid var(--border);
@@ -600,8 +607,14 @@ p { color: var(--muted); line-height: 1.75; }
    FOOTER
    ═══════════════════════════════════ */
 .footer {
-  background: var(--surface); border-top: 1px solid var(--border);
-  padding: 40px 0;
+  background: rgba(17,19,24,0.92);
+  border-top: 1px solid var(--border);
+  padding: 14px 0;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 100;
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
 }
 .footer-inner {
   max-width: 1200px; margin: 0 auto; padding: 0 32px;
@@ -1001,7 +1014,7 @@ p { color: var(--muted); line-height: 1.75; }
         <div class="tl-dot"></div>
         <div class="tl-period">Oct 2025 — May 2026</div>
         <div class="tl-company">Founders &amp; Funders</div>
-        <div class="tl-role">Executive Project Manager / Performance &amp; Systems Lead</div>
+        <div class="tl-role">Performance &amp; Systems Lead</div>
         <p class="tl-desc">Driving organizational performance through integrated systems thinking. Architecting scalable workflows and accountability frameworks that align cross-functional teams to strategic priorities.</p>
         <div class="tl-pills">
           <span class="tl-pill">Systems Design</span>
@@ -1037,7 +1050,7 @@ p { color: var(--muted); line-height: 1.75; }
         <div class="tl-dot"></div>
         <div class="tl-period">Sep 2017 — Feb 2022</div>
         <div class="tl-company">Ampersand SG</div>
-        <div class="tl-role">General Manager</div>
+        <div class="tl-role">Senior Project Manager</div>
         <p class="tl-desc">Led cross-border marketing and operations projects across Singapore and the Philippines. Built and managed distributed teams, delivering campaigns and operational initiatives on scope, timeline, and budget.</p>
         <div class="tl-pills">
           <span class="tl-pill">Cross-Border Ops</span>
@@ -1049,7 +1062,7 @@ p { color: var(--muted); line-height: 1.75; }
         <div class="tl-dot"></div>
         <div class="tl-period">Jan 2008 — Mar 2014</div>
         <div class="tl-company">Muehlhan Qatar</div>
-        <div class="tl-role">Project Manager</div>
+        <div class="tl-role">Project Coordinator</div>
         <p class="tl-desc">Coordinated large-scale industrial projects in Qatar, managing subcontractors, resource scheduling, and compliance documentation in a high-stakes, safety-critical environment.</p>
         <div class="tl-pills">
           <span class="tl-pill">Industrial Projects</span>
@@ -1605,5 +1618,6 @@ chatForm.addEventListener('submit', function(e) {
   }, 1400);
 });
 </script>
+
 </body>
 </html>
