@@ -1264,7 +1264,7 @@ body.loading { overflow: hidden; }
     <div class="rv-l">
       <div class="about-label">Who I Am</div>
       <h2 class="about-h2">The Person<br>Behind the <em>Work</em></h2>
-      <p class="about-body">I'm an Executive Project Manager with over a decade of experience leading operations across logistics, marketing, tech, and professional services. My work spans the Philippines, United States, and Middle East — building systems that scale and teams that deliver.</p>
+      <p class="about-body">I'm an Executive Project Manager with over a decade of experience leading operations across logistics, marketing, tech, and professional services. My work spans the Philippines, Singapore, and Qatar — building systems that scale and teams that deliver.</p>
       <p class="about-body" style="margin-bottom:0;">I specialize in making complex things simple — translating strategy into execution, and turning scattered workflows into precision-engineered systems.</p>
       <div class="about-grid">
         <div class="about-card">
@@ -1393,7 +1393,7 @@ body.loading { overflow: hidden; }
         <div class="exp-period">Oct 2025 — May 2026</div>
         <div class="exp-right">
           <div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:rgba(200,169,110,0.4);">01</span><div class="exp-co">Founders &amp; Funders</div></div>
-          <div class="exp-role">Executive Project Manager / Performance &amp; Systems Lead</div>
+          <div class="exp-role">Performance &amp; Systems Lead</div>
           <div class="exp-meta">
             <span class="exp-meta-pill dur">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1431,7 +1431,7 @@ body.loading { overflow: hidden; }
         <div class="exp-period">Mar 2022 — May 2024</div>
         <div class="exp-right">
           <div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:rgba(200,169,110,0.4);">03</span><div class="exp-co">DMT Logistics</div></div>
-          <div class="exp-role">Owner</div>
+          <div class="exp-role">Operations Manager</div>
           <div class="exp-meta">
             <span class="exp-meta-pill dur">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1450,7 +1450,7 @@ body.loading { overflow: hidden; }
         <div class="exp-period">Sep 2017 — Feb 2022</div>
         <div class="exp-right">
           <div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:rgba(200,169,110,0.4);">04</span><div class="exp-co">Ampersand SG</div></div>
-          <div class="exp-role">General Manager</div>
+          <div class="exp-role">Senior Project Manager</div>
           <div class="exp-meta">
             <span class="exp-meta-pill dur">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1469,7 +1469,7 @@ body.loading { overflow: hidden; }
         <div class="exp-period">Jan 2008 — Mar 2014</div>
         <div class="exp-right">
           <div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:rgba(200,169,110,0.4);">05</span><div class="exp-co">Muehlhan Qatar</div></div>
-          <div class="exp-role">Project Manager</div>
+          <div class="exp-role">Project Coordinator</div>
           <div class="exp-meta">
             <span class="exp-meta-pill dur">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1595,23 +1595,21 @@ body.loading { overflow: hidden; }
                   <option value="60">60 minutes</option>
                 </select>
               </div>
-              <div class="f-field"><label for="bookPlatform">Platform *</label>
-                <select id="bookPlatform" required>
-                  <option value="">Select</option>
-                  <option value="Google Meet">Google Meet</option>
-                  <option value="Zoom">Zoom</option>
-                  <option value="Microsoft Teams">Microsoft Teams</option>
-                  <option value="Phone Call">Phone Call</option>
-                </select>
+              <div class="f-field">
+                <label>Platform</label>
+                <div style="display:flex;align-items:center;gap:8px;background:var(--slate);border:1px solid var(--line);border-radius:10px;padding:11px 14px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  <span style="font-size:0.85rem;color:var(--paper);font-family:var(--body);">Zoom</span>
+                </div>
               </div>
             </div>
             <div class="f-field"><label for="bookTopic">Topic / Agenda</label><input type="text" id="bookTopic" placeholder="What would you like to discuss?"></div>
-            <button class="book-btn" onclick="confirmBooking()">Add to Google Calendar →</button>
+            <button class="book-btn" onclick="confirmBooking()">Schedule Zoom Meeting →</button>
           </div>
           <div id="bookingSuccess">
             <h4>Meeting Scheduled!</h4>
             <p id="successMsg"></p>
-            <a id="gcalLink" href="#" target="_blank">Open in Google Calendar →</a>
+            <a id="gcalLink" href="#" target="_blank">Add to Google Calendar →</a>
           </div>
         </div>
       </div>
@@ -1826,7 +1824,7 @@ updateStatus();setInterval(updateStatus,60000);
 })();
 
 // ── MARQUEE BUILD ──
-const mqItems=['Executive Project Manager','10+ Years Experience','5 Industries','3 Countries','Philippines · United States · Qatar','ClickUp Certified','HubSpot Sales Certified','Systems & Automation','Team Leadership'];
+const mqItems=['Executive Project Manager','10+ Years Experience','5 Industries','3 Countries','Philippines · Singapore · Qatar','ClickUp Certified','HubSpot Sales Certified','Systems & Automation','Team Leadership'];
 const track=document.getElementById('mqTrack');
 if(track){[...mqItems,...mqItems].forEach(t=>{const d=document.createElement('div');d.className='marquee-item';d.textContent=t;track.appendChild(d);});}
 
@@ -1896,29 +1894,61 @@ function showSlots(date){
 }
 function parseTime(ts,date){const[time,mer]=ts.split(' ');let[h,m]=time.split(':').map(Number);if(mer==='PM'&&h!==12)h+=12;if(mer==='AM'&&h===12)h=0;const d=new Date(date);d.setHours(h,m,0,0);return d;}
 function toGCal(d){return d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';}
-function buildGCalURL(name,email,dur,plat,topic,startDate){
+
+function buildZoomURL(name,email,dur,topic){
+  // Opens Zoom's own meeting scheduler with fields pre-filled
+  const params=new URLSearchParams({
+    topic:   (topic?topic+' — ':'')+'Zoom Call with '+name,
+    duration: dur,
+    email:    email,
+  });
+  return 'https://zoom.us/meeting/schedule?'+params.toString();
+}
+
+function buildGCalURL(name,email,dur,topic,startDate){
   const start=parseTime(selSlot,startDate);
   const sU=new Date(start.getTime()-(8*3600000));
   const eU=new Date(sU.getTime()+(parseInt(dur)*60000));
-  const title=encodeURIComponent('Meeting with '+name+' — '+(topic||'Discussion'));
-  const details=encodeURIComponent(name+' ('+email+') has requested a '+dur+'-min meeting via '+plat+'.\n\nTopic: '+(topic||'Not specified')+'\n\nConfirm: gilderaldom@gmail.com');
-  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+title+'&dates='+toGCal(sU)+'/'+toGCal(eU)+'&details='+details+'&add='+encodeURIComponent(email)+'&add='+encodeURIComponent('gilderaldom@gmail.com')+'&sf=true&output=xml';
+  const title=encodeURIComponent('Zoom Call: '+(topic||'Discussion')+' with '+name);
+  const details=encodeURIComponent(
+    'Zoom meeting requested by '+name+' ('+email+')\n'+
+    'Topic: '+(topic||'Not specified')+'\n'+
+    'Duration: '+dur+' min\n\n'+
+    'Gilderaldo will send the Zoom link to '+email+' to confirm.\n'+
+    'Contact: gilderaldom@gmail.com'
+  );
+  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+title+
+    '&dates='+toGCal(sU)+'/'+toGCal(eU)+
+    '&details='+details+
+    '&add='+encodeURIComponent(email)+
+    '&add='+encodeURIComponent('gilderaldom@gmail.com')+
+    '&sf=true&output=xml';
 }
+
 function confirmBooking(){
   const name=document.getElementById('bookName').value.trim();
   const email=document.getElementById('bookEmail').value.trim();
   const dur=document.getElementById('bookDuration').value;
-  const plat=document.getElementById('bookPlatform').value;
   const topic=document.getElementById('bookTopic').value.trim();
-  if(!name||!email||!dur||!plat){showToast('⚠️ Please fill in all required fields.');return;}
+  if(!name||!email||!dur){showToast('⚠️ Please fill in all required fields.');return;}
   if(!selDate||!selSlot){showToast('⚠️ Please select a date and time.');return;}
-  const url=buildGCalURL(name,email,dur,plat,topic,selDate);
+
+  const zoomURL=buildZoomURL(name,email,dur,topic);
+  const calURL =buildGCalURL(name,email,dur,topic,selDate);
   const ds=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+
   document.getElementById('bookingForm').style.display='none';
-  document.getElementById('successMsg').innerHTML='<strong>'+name+'</strong>, your '+dur+'-min meeting on<br><strong>'+ds+' at '+selSlot+' PHT</strong><br>via '+plat+' is ready.';
-  document.getElementById('gcalLink').href=url;
+  document.getElementById('successMsg').innerHTML=
+    '<strong>'+name+'</strong>, your '+dur+'-min Zoom call on<br>'+
+    '<strong>'+ds+' at '+selSlot+' PHT</strong><br>'+
+    'Gilderaldo will send you the Zoom link at '+email+'.';
+  document.getElementById('gcalLink').href=calURL;
+  document.getElementById('gcalLink').textContent='Add to Google Calendar →';
   document.getElementById('bookingSuccess').style.display='block';
-  window.open(url,'_blank');showToast('📅 Opening Google Calendar…');
+
+  // Open Zoom scheduler first (creates the actual Zoom meeting)
+  window.open(zoomURL,'_blank');
+  showToast('📹 Opening Zoom scheduler…');
 }
 document.getElementById('prevMonth').addEventListener('click',()=>{cM--;if(cM<0){cM=11;cY--;}renderCal();});
 document.getElementById('nextMonth').addEventListener('click',()=>{cM++;if(cM>11){cM=0;cY++;}renderCal();});
