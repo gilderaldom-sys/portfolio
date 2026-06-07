@@ -536,65 +536,126 @@ body::before{
 ══════════════════════════════════════ */
 #p-schedule{background:var(--ink);}
 .sched-inner{max-width:1280px;margin:0 auto;padding:100px 48px;}
-.sched-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:64px;}
 
-/* Calendar */
-.cal-panel{background:var(--coal);border:1px solid var(--line);border-radius:20px;padding:28px;}
-.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
-.cal-month{font-family:var(--serif);font-size:1.1rem;color:var(--paper);}
-.cal-btn{
-  background:var(--slate);border:1px solid var(--line);color:var(--fog);
-  width:32px;height:32px;border-radius:8px;cursor:none;
-  display:flex;align-items:center;justify-content:center;font-size:0.9rem;
-  transition:all 0.2s;
+/* Zoom Booking Card */
+.zoom-cta-wrap {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
 }
-.cal-btn:hover{border-color:var(--gold);color:var(--gold);}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:20px;}
-.cal-dn{font-size:0.55rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--fog);text-align:center;padding:5px 0;}
-.cal-d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:500;border-radius:7px;color:rgba(255,255,255,0.15);}
-.cal-d.am{color:var(--fog);cursor:none;}
-.cal-d.av{color:var(--paper);cursor:none;transition:all 0.15s;}
-.cal-d.av:hover{background:rgba(200,169,110,0.15);color:var(--gold);}
-.cal-d.td{background:rgba(200,169,110,0.1);color:var(--gold);font-weight:700;}
-.cal-d.sl{background:var(--gold);color:var(--ink);font-weight:700;}
-.cal-d.na{color:rgba(255,255,255,0.08);}
-.time-label{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--fog);margin-bottom:10px;}
-.time-slots{display:flex;flex-wrap:wrap;gap:7px;}
-.t-slot{
-  background:var(--slate);border:1px solid var(--line);
-  color:var(--fog);padding:8px 13px;border-radius:8px;
-  font-size:0.75rem;font-weight:600;cursor:none;transition:all 0.15s;
+.zoom-main-card {
+  background: var(--coal);
+  border: 1px solid rgba(200,169,110,0.2);
+  border-radius: 24px;
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  overflow: hidden;
 }
-.t-slot:hover{border-color:var(--gold);color:var(--gold);}
-.t-slot.sl{background:rgba(200,169,110,0.12);border-color:var(--gold);color:var(--gold);}
+.zoom-main-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,169,110,0.5), transparent);
+}
+.zoom-card-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: rgba(200,169,110,0.08);
+  border: 1px solid rgba(200,169,110,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.zoom-card-icon svg { width: 24px; height: 24px; stroke: #c8a96e; fill: none; stroke-width: 1.5; }
+.zoom-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 400;
+  color: var(--paper); line-height: 1.2;
+}
+.zoom-card-desc {
+  font-size: 0.9rem; color: var(--fog);
+  line-height: 1.8; max-width: 400px;
+}
+.zoom-book-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #1a73e8;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 16px 32px; border-radius: 40px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.25s; align-self: flex-start;
+  box-shadow: 0 8px 28px rgba(26,115,232,0.3);
+}
+.zoom-book-btn:hover {
+  background: #1557b0;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(26,115,232,0.4);
+}
+.zoom-book-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
 
-/* Booking form */
-.book-panel{background:var(--coal);border:1px solid var(--line);border-radius:20px;padding:28px;}
-.book-title{font-family:var(--serif);font-size:1.3rem;color:var(--paper);margin-bottom:20px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
-.f-field label{display:block;font-size:0.62rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--fog);margin-bottom:6px;}
-.f-field input,.f-field select,.f-field textarea{
-  width:100%;background:var(--slate);border:1px solid var(--line);
-  color:var(--paper);padding:11px 14px;border-radius:10px;
-  font-family:var(--body);font-size:0.85rem;outline:none;
-  transition:border-color 0.2s;
+/* Info cards (right side) */
+.zoom-info-cards {
+  display: flex; flex-direction: column; gap: 16px;
 }
-.f-field input:focus,.f-field select:focus{border-color:var(--gold);}
-.f-field select option{background:var(--slate);}
-.f-field{margin-bottom:12px;}
-#bookingForm{display:none;flex-direction:column;}
-.book-btn{
-  background:var(--gold);color:var(--ink);border:none;
-  padding:14px;border-radius:40px;
-  font-family:var(--body);font-size:0.78rem;font-weight:700;
-  letter-spacing:0.08em;text-transform:uppercase;cursor:none;
-  transition:all 0.25s;margin-top:8px;
+.zoom-info-card {
+  background: var(--slate);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px; padding: 22px 24px;
+  display: flex; align-items: center; gap: 16px;
+  transition: border-color 0.25s;
 }
-.book-btn:hover{background:var(--gold2);transform:translateY(-2px);}
-#bookingSuccess{display:none;background:rgba(74,222,128,0.07);border:1px solid rgba(74,222,128,0.2);border-radius:12px;padding:20px;margin-top:16px;}
-#bookingSuccess h4{font-family:var(--serif);font-size:1rem;color:#4ade80;margin-bottom:8px;}
-#bookingSuccess p{font-size:0.82rem;color:var(--fog);line-height:1.7;}
-#bookingSuccess a{color:var(--gold);font-size:0.78rem;display:inline-block;margin-top:10px;}
+.zoom-info-card:hover { border-color: rgba(200,169,110,0.2); }
+.zoom-info-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(200,169,110,0.07);
+  border: 1px solid rgba(200,169,110,0.15);
+  display: flex; align-items: center; justify-content: center;
+}
+.zoom-info-icon svg { width: 16px; height: 16px; stroke: #c8a96e; fill: none; stroke-width: 1.5; }
+.zoom-info-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(200,169,110,0.6); margin-bottom: 3px;
+}
+.zoom-info-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem; color: var(--paper);
+}
+
+/* URL display */
+.zoom-url-bar {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 12px 16px;
+  margin-top: 4px;
+}
+.zoom-url-bar span {
+  font-size: 0.72rem; color: var(--fog);
+  font-family: 'DM Sans', monospace;
+  flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.zoom-url-copy {
+  background: none; border: 1px solid rgba(255,255,255,0.1);
+  color: var(--fog); font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 6px; cursor: pointer;
+  transition: all 0.2s; flex-shrink: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+.zoom-url-copy:hover { border-color: var(--gold); color: var(--gold); }
+
+@media (max-width: 1024px) {
+  .zoom-cta-wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .zoom-main-card { padding: 32px 24px; }
+}
 
 /* ══════════════════════════════════════
    FIXED FOOTER
@@ -691,7 +752,6 @@ body::before{
   .s-card.wide{grid-column:span 2;}
   .certs-grid{grid-template-columns:1fr 1fr;}
   .connect-grid{grid-template-columns:1fr 1fr;}
-  .sched-grid{grid-template-columns:1fr;}
   .exp-item{grid-template-columns:1fr;gap:8px;}
 }
 @media(max-width:768px){
@@ -1562,57 +1622,62 @@ body.loading { overflow: hidden; }
   <div class="sched-inner">
     <div class="rv">
       <div class="section-label">Book a Meeting</div>
-      <h2 class="section-h">Schedule a <em>Call</em></h2>
-      <p class="section-sub">Choose a date and time below.</p>
+      <h2 class="section-h">Schedule a <em>Zoom Call</em></h2>
+      <p class="section-sub">Click below to open my Zoom scheduler — pick a time, confirm, and you'll get an instant Zoom link.</p>
     </div>
-    <div class="sched-grid">
-      <div class="rv-l">
-        <div class="cal-panel">
-          <div class="cal-head">
-            <button id="prevMonth" class="cal-btn" aria-label="Previous">‹</button>
-            <span class="cal-month" id="calMonth">Month Year</span>
-            <button id="nextMonth" class="cal-btn" aria-label="Next">›</button>
-          </div>
-          <div class="cal-grid" id="calGrid"></div>
-          <div class="time-label" id="selectedDateLabel">Select a date</div>
-          <div id="slotsContainer"></div>
+
+    <div class="zoom-cta-wrap">
+
+      <!-- Main CTA card -->
+      <div class="zoom-main-card rv-l">
+        <div class="zoom-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <div class="zoom-card-title">Book a Zoom<br>Meeting with Me</div>
+        <p class="zoom-card-desc">Choose a date and time that works for you. The scheduler shows my real availability — no back-and-forth emails needed. You'll receive a Zoom link instantly after booking.</p>
+        <a href="https://scheduler.zoom.us/gilderaldo-magdamo/" target="_blank" rel="noopener" class="zoom-book-btn">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Open Zoom Scheduler
+        </a>
+        <div class="zoom-url-bar">
+          <svg width="12" height="12" viewBox="0 0 24 24" stroke="#7a7d87" fill="none" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>scheduler.zoom.us/gilderaldo-magdamo/</span>
+          <button class="zoom-url-copy" onclick="navigator.clipboard.writeText('https://scheduler.zoom.us/gilderaldo-magdamo/').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1800)})">Copy</button>
         </div>
       </div>
-      <div class="rv-r">
-        <div class="book-panel">
-          <div class="book-title">Booking Details</div>
-          <div id="bookingForm">
-            <div class="form-row">
-              <div class="f-field"><label for="bookName">Your Name *</label><input type="text" id="bookName" placeholder="Full name" required></div>
-              <div class="f-field"><label for="bookEmail">Email *</label><input type="email" id="bookEmail" placeholder="you@email.com" required></div>
-            </div>
-            <div class="form-row">
-              <div class="f-field"><label for="bookDuration">Duration *</label>
-                <select id="bookDuration" required>
-                  <option value="">Select</option>
-                  <option value="30">30 minutes</option>
-                  <option value="45">45 minutes</option>
-                  <option value="60">60 minutes</option>
-                </select>
-              </div>
-              <div class="f-field">
-                <label>Platform</label>
-                <div style="display:flex;align-items:center;gap:8px;background:var(--slate);border:1px solid var(--line);border-radius:10px;padding:11px 14px;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-                  <span style="font-size:0.85rem;color:var(--paper);font-family:var(--body);">Zoom</span>
-                </div>
-              </div>
-            </div>
-            <div class="f-field"><label for="bookTopic">Topic / Agenda</label><input type="text" id="bookTopic" placeholder="What would you like to discuss?"></div>
-            <button class="book-btn" onclick="confirmBooking()">Schedule Zoom Meeting →</button>
+
+      <!-- Info cards -->
+      <div class="zoom-info-cards rv-r">
+        <div class="zoom-info-card">
+          <div class="zoom-info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <div class="zoom-info-label">Available Hours</div>
+            <div class="zoom-info-val">Mon – Fri · 8:00 AM – 8:00 PM PHT</div>
           </div>
-          <div id="bookingSuccess">
-            <h4>Meeting Scheduled!</h4>
-            <p id="successMsg"></p>
-            <a id="gcalLink" href="#" target="_blank">Add to Google Calendar →</a>
+        </div>
+        <div class="zoom-info-card">
+          <div class="zoom-info-icon"><svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+          <div>
+            <div class="zoom-info-label">Platform</div>
+            <div class="zoom-info-val">Zoom · Link sent instantly on booking</div>
+          </div>
+        </div>
+        <div class="zoom-info-card">
+          <div class="zoom-info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="zoom-info-label">Timezone</div>
+            <div class="zoom-info-val">Philippine Standard Time (UTC+8)</div>
+          </div>
+        </div>
+        <div class="zoom-info-card">
+          <div class="zoom-info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="zoom-info-label">Prefer Email?</div>
+            <div class="zoom-info-val">gilderaldom@gmail.com</div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1844,115 +1909,6 @@ window.addEventListener('scroll',()=>{
   sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur2=s.id;});
   navLinks.forEach(a=>{const active=a.getAttribute('href')==='#'+cur2;a.classList.toggle('active',active);});
 },{passive:true});
-
-// ── CALENDAR ──
-const today=new Date();
-let cY=today.getFullYear(),cM=today.getMonth();
-let selDate=null,selSlot=null;
-const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
-const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-function isAvail(d){const day=d.getDay();return day>=1&&day<=5&&d>=new Date(today.getFullYear(),today.getMonth(),today.getDate());}
-function renderCal(){
-  document.getElementById('calMonth').textContent=MONTHS[cM]+' '+cY;
-  const grid=document.getElementById('calGrid');
-  grid.innerHTML='';
-  DAYS.forEach(d=>{const el=document.createElement('div');el.className='cal-dn';el.textContent=d;grid.appendChild(el);});
-  const first=new Date(cY,cM,1).getDay();
-  const dim=new Date(cY,cM+1,0).getDate();
-  const prev=new Date(cY,cM,0).getDate();
-  for(let i=0;i<first;i++){const el=document.createElement('div');el.className='cal-d';el.textContent=prev-first+1+i;grid.appendChild(el);}
-  for(let d=1;d<=dim;d++){
-    const el=document.createElement('div');
-    const date=new Date(cY,cM,d);
-    const isTd=date.toDateString()===today.toDateString();
-    const av=isAvail(date);
-    el.className='cal-d am'+(isTd?' td':av?' av':' na');
-    el.textContent=d;
-    if(selDate&&date.toDateString()===selDate.toDateString())el.classList.add('sl');
-    if(av)el.addEventListener('click',()=>selectDate(date,el));
-    grid.appendChild(el);
-  }
-  const rem=42-first-dim;
-  for(let i=1;i<=rem;i++){const el=document.createElement('div');el.className='cal-d';el.textContent=i;grid.appendChild(el);}
-}
-function selectDate(date,el){
-  document.querySelectorAll('.cal-d.sl').forEach(e=>e.classList.remove('sl'));
-  el.classList.add('sl');selDate=date;selSlot=null;showSlots(date);
-}
-const SLOTS=['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','4:00 PM'];
-function showSlots(date){
-  document.getElementById('selectedDateLabel').textContent=date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
-  const c=document.getElementById('slotsContainer');
-  c.innerHTML='<div class="time-slots" id="slots"></div>';
-  const s=document.getElementById('slots');
-  SLOTS.forEach(sl=>{
-    const btn=document.createElement('button');btn.className='t-slot';btn.textContent=sl;
-    btn.addEventListener('click',()=>{document.querySelectorAll('.t-slot').forEach(b=>b.classList.remove('sl'));btn.classList.add('sl');selSlot=sl;document.getElementById('bookingForm').style.display='flex';document.getElementById('bookingSuccess').style.display='none';});
-    s.appendChild(btn);
-  });
-  document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').style.display='none';
-}
-function parseTime(ts,date){const[time,mer]=ts.split(' ');let[h,m]=time.split(':').map(Number);if(mer==='PM'&&h!==12)h+=12;if(mer==='AM'&&h===12)h=0;const d=new Date(date);d.setHours(h,m,0,0);return d;}
-function toGCal(d){return d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';}
-
-function buildZoomURL(name,email,dur,topic){
-  // Opens Zoom's own meeting scheduler with fields pre-filled
-  const params=new URLSearchParams({
-    topic:   (topic?topic+' — ':'')+'Zoom Call with '+name,
-    duration: dur,
-    email:    email,
-  });
-  return 'https://zoom.us/meeting/schedule?'+params.toString();
-}
-
-function buildGCalURL(name,email,dur,topic,startDate){
-  const start=parseTime(selSlot,startDate);
-  const sU=new Date(start.getTime()-(8*3600000));
-  const eU=new Date(sU.getTime()+(parseInt(dur)*60000));
-  const title=encodeURIComponent('Zoom Call: '+(topic||'Discussion')+' with '+name);
-  const details=encodeURIComponent(
-    'Zoom meeting requested by '+name+' ('+email+')\n'+
-    'Topic: '+(topic||'Not specified')+'\n'+
-    'Duration: '+dur+' min\n\n'+
-    'Gilderaldo will send the Zoom link to '+email+' to confirm.\n'+
-    'Contact: gilderaldom@gmail.com'
-  );
-  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+title+
-    '&dates='+toGCal(sU)+'/'+toGCal(eU)+
-    '&details='+details+
-    '&add='+encodeURIComponent(email)+
-    '&add='+encodeURIComponent('gilderaldom@gmail.com')+
-    '&sf=true&output=xml';
-}
-
-function confirmBooking(){
-  const name=document.getElementById('bookName').value.trim();
-  const email=document.getElementById('bookEmail').value.trim();
-  const dur=document.getElementById('bookDuration').value;
-  const topic=document.getElementById('bookTopic').value.trim();
-  if(!name||!email||!dur){showToast('⚠️ Please fill in all required fields.');return;}
-  if(!selDate||!selSlot){showToast('⚠️ Please select a date and time.');return;}
-
-  const zoomURL=buildZoomURL(name,email,dur,topic);
-  const calURL =buildGCalURL(name,email,dur,topic,selDate);
-  const ds=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
-
-  document.getElementById('bookingForm').style.display='none';
-  document.getElementById('successMsg').innerHTML=
-    '<strong>'+name+'</strong>, your '+dur+'-min Zoom call on<br>'+
-    '<strong>'+ds+' at '+selSlot+' PHT</strong><br>'+
-    'Gilderaldo will send you the Zoom link at '+email+'.';
-  document.getElementById('gcalLink').href=calURL;
-  document.getElementById('gcalLink').textContent='Add to Google Calendar →';
-  document.getElementById('bookingSuccess').style.display='block';
-
-  // Open Zoom scheduler first (creates the actual Zoom meeting)
-  window.open(zoomURL,'_blank');
-  showToast('📹 Opening Zoom scheduler…');
-}
-document.getElementById('prevMonth').addEventListener('click',()=>{cM--;if(cM<0){cM=11;cY--;}renderCal();});
-document.getElementById('nextMonth').addEventListener('click',()=>{cM++;if(cM>11){cM=0;cY++;}renderCal();});
-renderCal();
 
 // ── NUMBER COUNT-UP ANIMATION ──
 function countUp(el, target, suffix='', duration=1400) {
