@@ -609,8 +609,6 @@ body::before{
 }
 .f-left{font-size:0.68rem;color:var(--fog);font-family:var(--body);}
 .f-left span{color:var(--gold);}
-.f-visit{display:flex;align-items:center;gap:6px;font-size:0.65rem;color:var(--fog);}
-.f-visit svg{width:11px;height:11px;stroke:var(--fog);fill:none;stroke-width:2;}
 .f-right{font-size:0.65rem;color:var(--fog);}
 .f-right a{color:var(--gold);text-decoration:none;}
 
@@ -1266,7 +1264,7 @@ body.loading { overflow: hidden; }
     <div class="rv-l">
       <div class="about-label">Who I Am</div>
       <h2 class="about-h2">The Person<br>Behind the <em>Work</em></h2>
-      <p class="about-body">I'm an Executive Project Manager with over a decade of experience leading operations across logistics, marketing, tech, and professional services. My work spans the Philippines, United States, and Middle East — building systems that scale and teams that deliver.</p>
+      <p class="about-body">I'm an Executive Project Manager with over a decade of experience leading operations across logistics, marketing, tech, and professional services. My work spans the Philippines, Singapore, and Qatar — building systems that scale and teams that deliver.</p>
       <p class="about-body" style="margin-bottom:0;">I specialize in making complex things simple — translating strategy into execution, and turning scattered workflows into precision-engineered systems.</p>
       <div class="about-grid">
         <div class="about-card">
@@ -1395,7 +1393,7 @@ body.loading { overflow: hidden; }
         <div class="exp-period">Oct 2025 — May 2026</div>
         <div class="exp-right">
           <div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:rgba(200,169,110,0.4);">01</span><div class="exp-co">Founders &amp; Funders</div></div>
-          <div class="exp-role">Executive Project Manager / Performance &amp; Systems Lead</div>
+          <div class="exp-role">Performance &amp; Systems Lead</div>
           <div class="exp-meta">
             <span class="exp-meta-pill dur">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1433,7 +1431,7 @@ body.loading { overflow: hidden; }
         <div class="exp-period">Mar 2022 — May 2024</div>
         <div class="exp-right">
           <div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:rgba(200,169,110,0.4);">03</span><div class="exp-co">DMT Logistics</div></div>
-          <div class="exp-role">Owner</div>
+          <div class="exp-role">Operations Manager</div>
           <div class="exp-meta">
             <span class="exp-meta-pill dur">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1452,7 +1450,7 @@ body.loading { overflow: hidden; }
         <div class="exp-period">Sep 2017 — Feb 2022</div>
         <div class="exp-right">
           <div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:rgba(200,169,110,0.4);">04</span><div class="exp-co">Ampersand SG</div></div>
-          <div class="exp-role">General Manager</div>
+          <div class="exp-role">Senior Project Manager</div>
           <div class="exp-meta">
             <span class="exp-meta-pill dur">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1471,7 +1469,7 @@ body.loading { overflow: hidden; }
         <div class="exp-period">Jan 2008 — Mar 2014</div>
         <div class="exp-right">
           <div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:rgba(200,169,110,0.4);">05</span><div class="exp-co">Muehlhan Qatar</div></div>
-          <div class="exp-role">Project Manager</div>
+          <div class="exp-role">Project Coordinator</div>
           <div class="exp-meta">
             <span class="exp-meta-pill dur">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1624,10 +1622,6 @@ body.loading { overflow: hidden; }
 <!-- ════════ FIXED FOOTER ════════ -->
 <footer id="site-footer">
   <div class="f-left">Gilderaldo <span>Magdamo</span> · Executive Project Manager</div>
-  <div class="f-visit">
-    <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-    <span id="visitCount">0</span> visits
-  </div>
   <div class="f-right">© <span id='fyear'>2026</span> · <a href="mailto:gilderaldom@gmail.com">gilderaldom@gmail.com</a></div>
 </footer>
 
@@ -1722,28 +1716,6 @@ document.querySelectorAll('.btn-fill,.btn-ghost,.h-cta').forEach(btn => {
     e.preventDefault();
     return false;
   });
-
-  // ── 5. Devtools size detection (width/height change trick) ──
-  let devtoolsOpen = false;
-  const threshold = 160;
-  function checkDevtools() {
-    const widthDiff  = window.outerWidth  - window.innerWidth  > threshold;
-    const heightDiff = window.outerHeight - window.innerHeight > threshold;
-    if ((widthDiff || heightDiff) && !devtoolsOpen) {
-      devtoolsOpen = true;
-      // Blur content when devtools detected
-      document.querySelectorAll('.page, #site-header').forEach(el => {
-        el.style.filter = 'blur(6px)';
-        el.style.transition = 'filter 0.4s';
-      });
-    } else if (!widthDiff && !heightDiff && devtoolsOpen) {
-      devtoolsOpen = false;
-      document.querySelectorAll('.page, #site-header').forEach(el => {
-        el.style.filter = '';
-      });
-    }
-  }
-  setInterval(checkDevtools, 1000);
 
   // ── 6. Console warning message ──
   const gold = 'color:#c8a96e;font-family:serif;font-size:14px;font-weight:bold;';
@@ -1951,111 +1923,6 @@ function confirmBooking(){
 document.getElementById('prevMonth').addEventListener('click',()=>{cM--;if(cM<0){cM=11;cY--;}renderCal();});
 document.getElementById('nextMonth').addEventListener('click',()=>{cM++;if(cM>11){cM=0;cY++;}renderCal();});
 renderCal();
-
-// ── GLOBAL VISIT COUNTER (Supabase) ──
-// ─────────────────────────────────────────────────────────────────
-//  SETUP (one-time, ~3 min):
-//  1. Create free account at https://supabase.com
-//  2. New project → SQL Editor → run:
-//       CREATE TABLE visits (id TEXT PRIMARY KEY, count BIGINT DEFAULT 0);
-//       INSERT INTO visits (id, count) VALUES ('portfolio', 0);
-//  3. Go to Project Settings → API → copy URL and anon/public key
-//  4. Replace SUPABASE_URL and SUPABASE_ANON_KEY below
-//  5. In Supabase → Authentication → Policies → visits table:
-//       Add policy: Allow anonymous SELECT and UPDATE (public read/write)
-//       Or run: ALTER TABLE visits ENABLE ROW LEVEL SECURITY;
-//               CREATE POLICY "public_read" ON visits FOR SELECT USING (true);
-//               CREATE POLICY "public_update" ON visits FOR UPDATE USING (true);
-// ─────────────────────────────────────────────────────────────────
-(async function(){
-  const SUPABASE_URL      = 'YOUR_SUPABASE_URL';        // e.g. https://xyzxyz.supabase.co
-  const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';   // long public key from dashboard
-  const el = document.getElementById('visitCount');
-
-  // Throttle: only count once per 30-min session to prevent refresh loops
-  const SESSION_KEY = 'gm_session_counted';
-  const THROTTLE_MS = 30 * 60 * 1000; // 30 minutes
-  const lastCounted = parseInt(sessionStorage.getItem(SESSION_KEY) || '0', 10);
-  const shouldIncrement = (Date.now() - lastCounted) > THROTTLE_MS;
-
-  // Supabase not yet configured — show placeholder and exit
-  if (SUPABASE_URL === 'YOUR_SUPABASE_URL') {
-    if (el) el.textContent = '—';
-    return;
-  }
-
-  const headers = {
-    'apikey': SUPABASE_ANON_KEY,
-    'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
-    'Content-Type': 'application/json',
-    'Prefer': 'return=representation'
-  };
-
-  try {
-    if (shouldIncrement) {
-      // Atomic increment via Supabase RPC (prevents race conditions)
-      // First try RPC increment function, fall back to read-modify-write
-      let newCount = null;
-
-      // Try calling a Supabase RPC function (most race-safe)
-      // SQL to create it: CREATE OR REPLACE FUNCTION increment_visits()
-      //   RETURNS bigint LANGUAGE plpgsql AS $$
-      //   DECLARE new_count bigint;
-      //   BEGIN
-      //     UPDATE visits SET count = count + 1 WHERE id = 'portfolio'
-      //     RETURNING count INTO new_count;
-      //     RETURN new_count;
-      //   END; $$;
-      const rpcRes = await fetch(SUPABASE_URL + '/rest/v1/rpc/increment_visits', {
-        method: 'POST',
-        headers,
-        body: '{}'
-      });
-
-      if (rpcRes.ok) {
-        newCount = await rpcRes.json();
-      } else {
-        // Fallback: read current count then update
-        const readRes = await fetch(
-          SUPABASE_URL + '/rest/v1/visits?id=eq.portfolio&select=count',
-          { headers }
-        );
-        if (!readRes.ok) throw new Error('Read failed');
-        const rows = await readRes.json();
-        const current = rows[0]?.count ?? 0;
-        newCount = current + 1;
-
-        const updateRes = await fetch(
-          SUPABASE_URL + '/rest/v1/visits?id=eq.portfolio',
-          {
-            method: 'PATCH',
-            headers,
-            body: JSON.stringify({ count: newCount })
-          }
-        );
-        if (!updateRes.ok) throw new Error('Update failed');
-      }
-
-      sessionStorage.setItem(SESSION_KEY, String(Date.now()));
-      if (el && newCount !== null) el.textContent = Number(newCount).toLocaleString();
-
-    } else {
-      // Already counted this session — just read current value
-      const readRes = await fetch(
-        SUPABASE_URL + '/rest/v1/visits?id=eq.portfolio&select=count',
-        { headers }
-      );
-      if (!readRes.ok) throw new Error('Read failed');
-      const rows = await readRes.json();
-      if (el) el.textContent = Number(rows[0]?.count ?? 0).toLocaleString();
-    }
-
-  } catch (err) {
-    console.warn('[Visit counter] Supabase error:', err.message);
-    // Silent fallback — show nothing rather than a wrong number
-    if (el) el.textContent = '—';
-  }
-})();
 
 // ── NUMBER COUNT-UP ANIMATION ──
 function countUp(el, target, suffix='', duration=1400) {
