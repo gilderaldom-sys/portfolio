@@ -1889,7 +1889,7 @@ updateStatus();setInterval(updateStatus,60000);
 })();
 
 // ── MARQUEE BUILD ──
-const mqItems=['Executive Project Manager','10+ Years Experience','5 Industries','3 Countries','Philippines · United States · Qatar','ClickUp Certified','HubSpot Sales Certified','Systems & Automation','Team Leadership'];
+const mqItems=['Executive Project Manager','15+ Years Experience','5 Industries','3 Countries','Philippines · United States · Qatar','ClickUp Certified','HubSpot Sales Certified','Systems & Automation','Team Leadership'];
 const track=document.getElementById('mqTrack');
 if(track){[...mqItems,...mqItems].forEach(t=>{const d=document.createElement('div');d.className='marquee-item';d.textContent=t;track.appendChild(d);});}
 
@@ -1926,7 +1926,7 @@ const statObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(!e.isIntersecting) return;
     const stats = e.target.querySelectorAll('.hero-stat-n');
-    const targets = [{v:10,s:'<em>+</em>'},{v:5,s:''},{v:3,s:''}];
+    const targets = [{v:15,s:'<em>+</em>'},{v:5,s:''},{v:3,s:''}];
     stats.forEach((s,i) => countUp(s, targets[i].v, targets[i].s));
     statObs.disconnect();
   });
